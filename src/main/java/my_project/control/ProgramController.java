@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
 public class ProgramController {
 
     //Attribute
-
+//ghxeu
 
     // Referenzen
     private final ViewController viewController;  // diese Referenz soll auf ein Objekt der Klasse viewController zeigen. Über dieses Objekt wird das Fenster gesteuert.
