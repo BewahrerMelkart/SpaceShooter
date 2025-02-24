@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
 public class ProgramController {
 
     //Attribute
-//ghxeu
+
 
     // Referenzen
     private final ViewController viewController;  // diese Referenz soll auf ein Objekt der Klasse viewController zeigen. Über dieses Objekt wird das Fenster gesteuert.
@@ -50,7 +50,10 @@ public class ProgramController {
         // Startbildschirm (Szene 0)
         // Ton
         viewController.getSoundController().loadSound("src/main/resources/sound/bgm_startScreen.mp3","startBGM", true);
+        viewController.getSoundController().loadSound("src/main/resources/sound/bgm_level_A.mp3","LevelA", true);
+
         SoundController.playSound("startBGM");
+
         // Bild
         StartBackground sback = new StartBackground();
         viewController.draw(sback,0);
@@ -80,6 +83,7 @@ public class ProgramController {
             currentScene = 1;
             viewController.showScene(currentScene);
             SoundController.stopSound("startBGM");
+            SoundController.playSound("LevelA");
         }
 
     }

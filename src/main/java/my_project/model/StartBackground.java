@@ -9,6 +9,7 @@ import java.awt.*;
  * Dient zum Zeichnen von nicht beweglichen Objekten im Hintergrund
  */
 public class StartBackground extends GraphicalObject {
+    int x;
 
     @Override
     public void draw(DrawTool drawTool) {
@@ -22,6 +23,10 @@ public class StartBackground extends GraphicalObject {
         drawTool.drawFilledCircle(230,530,2);
         drawTool.drawFilledCircle(700,630,2);
         drawTool.drawFilledCircle(700,230,2);
+    }
+
+    public void update (double dt){
+        this.x = (int) (this.x + 20*dt);
     }
 
 }
