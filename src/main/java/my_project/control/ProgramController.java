@@ -26,6 +26,7 @@ public class ProgramController {
     private final ViewController viewController;  // diese Referenz soll auf ein Objekt der Klasse viewController zeigen. Über dieses Objekt wird das Fenster gesteuert.
     private Player p1;
     private int currentScene;
+    private StartBackground sback;
 
     /**
      * Konstruktor
@@ -46,6 +47,8 @@ public class ProgramController {
         // Vorbereitungen
         InputManager inputManager = new InputManager(this);
         currentScene = 0;
+        sback = new StartBackground();
+
 
         // Startbildschirm (Szene 0)
         // Ton
@@ -55,7 +58,7 @@ public class ProgramController {
         SoundController.playSound("startBGM");
 
         // Bild
-        StartBackground sback = new StartBackground();
+
         viewController.draw(sback,0);
         Picture titleText = new Picture(100, 200, "src/main/resources/graphic/title_text.png");
         viewController.draw(titleText,0);
@@ -66,6 +69,8 @@ public class ProgramController {
         viewController.createScene();
         p1 = new Player(50,300);
         viewController.draw(p1,1);
+        Picture sternenhimmel = new Picture(1000, 1000, "src/main/resources/graphic/sternenhimmmel.png");
+        viewController.draw(sternenhimmel, 0);
 
         // Endbildschirm (Szene 2)
     }
@@ -75,7 +80,7 @@ public class ProgramController {
      * @param dt Zeit seit letztem Frame in Sekunden
      */
     public void updateProgram(double dt){
-
+        this.sback.update (dt);
     }
 
     public void processKeyboardInput(int keyCode) {
