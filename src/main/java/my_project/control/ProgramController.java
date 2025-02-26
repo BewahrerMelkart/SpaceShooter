@@ -67,10 +67,12 @@ public class ProgramController {
 
         // Spielbildschirm (Szene 1)
         viewController.createScene();
+        Picture sternenhimmel = new Picture(0, 0, "src/main/resources/graphic/sternenhimmel.png");
+        viewController.draw(sternenhimmel, 1);
+
+
         p1 = new Player(50,300);
         viewController.draw(p1,1);
-        Picture sternenhimmel = new Picture(1000, 1000, "src/main/resources/graphic/sternenhimmmel.png");
-        viewController.draw(sternenhimmel, 0);
 
         // Endbildschirm (Szene 2)
     }
